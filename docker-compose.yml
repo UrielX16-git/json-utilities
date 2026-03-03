@@ -1,0 +1,12 @@
+services:
+  json-api:
+    build:
+      context: ./api
+    container_name: json-utilities-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    environment:
+      - DATA_DIR=/data
+    restart: unless-stopped
